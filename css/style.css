@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: chocolate;
+    overflow: hidden;
+}
+
+.container {
+    width: 450px;
+    margin: auto;
+}
+
+.timeContainer {
+    background-color: rgb(218, 167, 100);
+    text-align: center;
+    padding: 20px;
+    border: 10px solid wheat;
+    border-radius: 20px;
+}
+
+h1 {
+    color: chocolate;
+    font-size: 100px;
+    margin: 0;
+}
+
+.manage {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    background-color: rgb(218, 167, 100);
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: 800;
+    border: 2px solid wheat;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+button:hover {
+    background-color: chocolate;
+    padding: 0 10px;
+}
+
+@keyframes fromRightToLeft {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes fromleftToRight {
+    from {
+        left: -50px;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+span[class*="line"] {
+    display: inline-block;
+    background-color: blanchedalmond;
+    width: 100px;
+    height: 10px;
+    border-radius: 20px;
+    margin-right: 50px;
+    position: absolute;
+    animation-name: fromleftToRight;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, 1, 1, 1);
+    z-index: -1;
+}
+
+span[class*="line"]:nth-child(even) {
+    animation-name: fromRightToLeft;
+}
